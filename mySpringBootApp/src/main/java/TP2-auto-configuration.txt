@@ -3,14 +3,15 @@ a)
 et s'en servir pour mySpringBootApp/src/main/java/com.mycompany.xyz/MyExplicitJavaConfigV1.java
 en MyExplicitJavaConfigV1.java.txt
 et pour renommer MyExplicitJavaConfigV2.java.txt en MyExplicitJavaConfigV2.java
-
 - revenir ensuite sur l'onglet "project explorer"
+
+- commenter la dépendance encadreur dans le pom.xml du projet myspringBootApp
+- decommenter la dépendance encadreur-starter-with-auto-config dans le pom.xml du projet myspringBootApp
+
 - ajouter TEMPORAIREMENT @Import({MyEncadreurAutoConfiguration.class})
 au dessus de la classe MyExplicitJavaConfigV2 et laisser tout le code interne de MyExplicitJavaConfigV2
 en commentaire
 
-- commenter la dépendance encadreur dans le pom.xml du projet myspringBootApp
-- decommenter la dépendance encadreur-starter-with-auto-config dans le pom.xml du projet myspringBootApp
 
 - ajouter les annotations @Configuration et @Bean au bons endroits de
    org.mygeneric.encadreur.autoconfigure.MyEncadreurAutoConfiguration
@@ -19,6 +20,8 @@ en commentaire
  - arrêter et relancer MySpringBootApplication et visualiser le bon fonctionnement
  via   http://localhost:8181/mySpringBootApp/index.html .
  
+ résultat escompté : {"message":"##--UNCHAMEAUAVECDESBOSSES--##"}
+                                  avec des ## !
  --------------------------------------------------------------------
  b - "magie de l'auto-configuration" ) 
  - retirer @Import({MyEncadreurAutoConfiguration.class}) au dessus de MyExplicitJavaConfigV2

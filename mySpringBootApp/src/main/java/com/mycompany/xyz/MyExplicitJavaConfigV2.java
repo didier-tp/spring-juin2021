@@ -1,17 +1,15 @@
 package com.mycompany.xyz;
 
-import org.mygeneric.encadreur.Prefixeur;
-import org.mygeneric.encadreur.Suffixeur;
-import org.mygeneric.encadreur.impl.PrefixeurAvecSeparateurEgal;
-import org.mygeneric.encadreur.impl.SuffixeurAvecSperateurEgal;
-import org.springframework.context.annotation.Bean;
+import org.mygeneric.encadreur.autoconfigure.MyEncadreurAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 @Configuration
 //pas besoin de @Import({MyEncadreurAutoConfiguration.class})
 //car META-INF/spring.factories mentionnant
 //....autoconfigure.EnableAutoConfiguration=...MyEncadreurAutoConfiguration
 //présent dans encadreur-starter.jar
+@Import({MyEncadreurAutoConfiguration.class})
 public class MyExplicitJavaConfigV2 {
 	
 	//NB: si on définit ici les beans Prefixeur et Suffixeur
