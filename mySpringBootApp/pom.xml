@@ -20,19 +20,19 @@
 
 	<dependencies>
 	
-	<dependency>
-			<groupId>org.mygeneric</groupId>
-			<artifactId>encadreur</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+<!-- 	<dependency> -->
+<!-- 			<groupId>org.mygeneric</groupId> -->
+<!-- 			<artifactId>encadreur</artifactId> -->
+<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+<!-- 		</dependency> -->
 	
-	<!--
+	
 		<dependency>
 			<groupId>org.mygeneric</groupId>
 			<artifactId>encadreur-starter-with-auto-config</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		  -->
+	
 		  
 		<!--  ext-txt-formatter est une extension  facultative de encadreur,
 		      si present alors camelCase to snake_case -->

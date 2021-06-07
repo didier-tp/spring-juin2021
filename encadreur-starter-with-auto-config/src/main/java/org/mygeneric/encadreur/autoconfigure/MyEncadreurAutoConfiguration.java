@@ -7,6 +7,8 @@ import org.mygeneric.encadreur.ext.OptionalFormatter;
 import org.mygeneric.encadreur.impl.EncadreurAvecPrefixeEtSuffixe;
 import org.mygeneric.encadreur.impl.PrefixeurAvecSeparateurTiret;
 import org.mygeneric.encadreur.impl.SuffixeurAvecSperateurTiret;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /*
  NB: cette classe est référencée dans le fichier
@@ -20,6 +22,7 @@ import org.mygeneric.encadreur.impl.SuffixeurAvecSperateurTiret;
 //A_FAIRE_EN_TP (dans un second temps): renommer le fichier META-INF/to-rename.factories
 
 //A_FAIRE_EN_TP (dans un premier temps) : ajouter ici des annotations utiles
+@Configuration
 public class MyEncadreurAutoConfiguration {
 	
 	//V1 : avec annotations minimales @Bean
@@ -29,24 +32,25 @@ public class MyEncadreurAutoConfiguration {
 	//      et @ConfigurationPropertiesScan sur cette classe
 	
 	
-	
+	@Bean
 	public Prefixeur monPrefixeurSpring() {
 		   return new PrefixeurAvecSeparateurTiret("##"); 
 	}
 	
 	
-	
+	@Bean
 	public Suffixeur monSuffixeurSpring() {
 			return new SuffixeurAvecSperateurTiret("##");
 	}
 	
     /*
+     @Bean
 	public Encadreur monEncadreurSpringSansFormatter(Prefixeur prefixeur,
 			                            Suffixeur suffixeur) {
 		return new EncadreurAvecPrefixeEtSuffixe(prefixeur,suffixeur);
 	}
 	*/
-	
+	@Bean
 	public Encadreur monEncadreurSpringAvecFormatter(Prefixeur prefixeur, Suffixeur suffixeur) {
 		OptionalFormatter formatter = null;
 		try {
