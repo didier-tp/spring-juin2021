@@ -34,6 +34,8 @@ en commentaire
  - arrêter et relancer MySpringBootApplication et visualiser le bon fonctionnement
  via   http://localhost:8181/mySpringBootApp/index.html .
  
+  résultat escompté : {"message":"##--UNCHAMEAUAVECDESBOSSES--##"}
+                                  avec des ## !
  ----------------------------------------------------------------
  c)
  - ajouter @ConditionalOnMissingBean sur les constructions de org.mygeneric.encadreur.Prefixeur , Suffixeur, Encadreur

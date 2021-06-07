@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Import;
 //car META-INF/spring.factories mentionnant
 //....autoconfigure.EnableAutoConfiguration=...MyEncadreurAutoConfiguration
 //présent dans encadreur-starter.jar
-@Import({MyEncadreurAutoConfiguration.class})
 public class MyExplicitJavaConfigV2 {
 	
 	//NB: si on définit ici les beans Prefixeur et Suffixeur
