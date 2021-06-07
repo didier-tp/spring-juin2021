@@ -46,6 +46,10 @@ en commentaire
    et en commentant ou bien en decommentant le contenu interne de la classe MyExplicitJavaConfigV2
    du projet mySpringBootApp
    
+    résultat escompté : {"message":"##--UNCHAMEAUAVECDESBOSSES--##"}
+                        ou bien {"message":"**==UNCHAMEAUAVECDESBOSSES==**"}
+   
+   terminer la partie c en re-commentant  le contenu interne de la classe MyExplicitJavaConfigV2
    --------------------------------------------------------------
    d) 
    - ajouter les annotations @ConditionalOnMissingClass et @ConditionalOnClass 
