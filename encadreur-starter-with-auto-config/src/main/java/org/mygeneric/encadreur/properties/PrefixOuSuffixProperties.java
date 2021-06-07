@@ -1,7 +1,5 @@
 package org.mygeneric.encadreur.properties;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
 //classe pour récupérer des sous propriétés de configuration
 //au sein de application.properties ou ...
 

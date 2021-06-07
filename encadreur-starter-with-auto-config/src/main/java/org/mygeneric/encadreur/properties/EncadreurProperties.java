@@ -1,11 +1,9 @@
 package org.mygeneric.encadreur.properties;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
 //classe pour récupérer des propriétés de configuration
 //au sein de application.properties ou ...
 
-@ConfigurationProperties(prefix = "encadreur")
+//A_FAIRE_EN_TP : ajouter ici l'annotation utile
 public class EncadreurProperties {
 	private PrefixOuSuffixProperties prefixeur;
 	private PrefixOuSuffixProperties suffixeur;
