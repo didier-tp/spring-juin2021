@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 import com.mycompany.xyz.entity.Devise;
 import com.mycompany.xyz.service.ServiceDevise;
 
-@Component
+
 @Profile({"initDataSet"})
 public class InitDataSet {
 	
-	@Autowired
+
 	private ServiceDevise serviceDevise;
 	
 	@PostConstruct
