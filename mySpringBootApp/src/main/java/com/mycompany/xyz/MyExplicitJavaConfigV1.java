@@ -4,27 +4,37 @@ import org.mygeneric.encadreur.Encadreur;
 import org.mygeneric.encadreur.Prefixeur;
 import org.mygeneric.encadreur.Suffixeur;
 import org.mygeneric.encadreur.impl.EncadreurAvecPrefixeEtSuffixe;
+import org.mygeneric.encadreur.impl.PrefixeurAvecSeparateurEgal;
 import org.mygeneric.encadreur.impl.PrefixeurAvecSeparateurTiret;
 import org.mygeneric.encadreur.impl.SuffixeurAvecSperateurTiret;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class MyExplicitJavaConfigV1 {
 	
+	@Bean
+	@Qualifier("tiret")
 	public Prefixeur monPrefixeurSpringAvecTiret() {
 		return new PrefixeurAvecSeparateurTiret("**");
 	}
 	
-   /*
+
+    @Bean
+    @Qualifier("egal")
 	public Prefixeur monPrefixeurSpringAvecEgal() {
 		return new PrefixeurAvecSeparateurEgal("**");
 	}
-	*/
+	
 
+	@Bean
 	public Suffixeur monSuffixeurSpring() {
 		return new SuffixeurAvecSperateurTiret("**");
 	}
 	
-
-	public Encadreur monEncadreurSpring(Prefixeur prefixeur,
+	@Bean
+	public Encadreur monEncadreurSpring(@Qualifier("egal") Prefixeur prefixeur,
 			                            Suffixeur suffixeur) {
 		return new EncadreurAvecPrefixeEtSuffixe(prefixeur,suffixeur);
 	}

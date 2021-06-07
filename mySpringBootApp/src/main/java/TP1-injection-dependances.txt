@@ -20,12 +20,16 @@ et EncadreurAvecPrefixeEtSuffixe soient prises en charge comme des composants sp
  et en affichant http://localhost:8181/mySpringBootApp/index.html dans un navigateur
  et en activant le lien hypertexte "encadrer unChameauAvecDesBosses"
 
+==> résultat escompté : {"message":"**--UNCHAMEAUAVECDESBOSSES--**"}
+        avec encadrement !
 -----------------------------
 
 c) tester une cohabitation de PrefixeurAvecSeparateurTiret et PrefixeurAvecSeparateurEgal
 via @Qualifier("tiret") et @Qualifier("egal")
 et public Encadreur monEncadreurSpring(@Qualifier("....")Prefixeur prefixeur, Suffixeur suffixeur){...}
 
+==> résultat escompté : {"message":"**--UNCHAMEAUAVECDESBOSSES--**"}
+       ou bien {"message":"**==UNCHAMEAUAVECDESBOSSES--**"}
 -------------------------------
 
 d) Ajouter des annotations manquantes de type @Autowired , @Service , @Component , ...
