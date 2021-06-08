@@ -85,5 +85,6 @@ résultat escompté :
  - effectuer idéalement plusieurs essais en modifiant les valeurs au sein du fichier application.yml
   et en effectant des "refresh" de index.html et en réactivant le lien "unChameauAvecDesBosses" .
 
-   
+resultat escompté :
+   {"message":">>-o-un_chameau_avec_des_bosses-o-<<"}
  
