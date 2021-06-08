@@ -7,7 +7,9 @@ import org.mygeneric.encadreur.ext.OptionalFormatter;
 import org.mygeneric.encadreur.impl.EncadreurAvecPrefixeEtSuffixe;
 import org.mygeneric.encadreur.impl.PrefixeurAvecSeparateurTiret;
 import org.mygeneric.encadreur.impl.SuffixeurAvecSperateurTiret;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -46,15 +48,18 @@ public class MyEncadreurAutoConfiguration {
 			return new SuffixeurAvecSperateurTiret("##");
 	}
 	
-    /*
+   
      @Bean
+ 	@ConditionalOnMissingBean(Encadreur.class)
+     @ConditionalOnMissingClass("org.mygeneric.fmt.MyFormatter")
 	public Encadreur monEncadreurSpringSansFormatter(Prefixeur prefixeur,
 			                            Suffixeur suffixeur) {
 		return new EncadreurAvecPrefixeEtSuffixe(prefixeur,suffixeur);
 	}
-	*/
+
 	@Bean
 	@ConditionalOnMissingBean(Encadreur.class)
+	@ConditionalOnClass(name = "org.mygeneric.fmt.MyFormatter")
 	public Encadreur monEncadreurSpringAvecFormatter(Prefixeur prefixeur, Suffixeur suffixeur) {
 		OptionalFormatter formatter = null;
 		try {

@@ -60,7 +60,10 @@ en commentaire
        * effectuer un premier essai sans décommenter la dépendance ext-txt-formatter dans le pom.xml de mySpringBootApp
        * effectuer un second essai en décommentant la dépendance ext-txt-formatter dans le pom.xml de mySpringBootApp
          et en effectuant un arrêt/relance de l'application.
- 
+         
+résultat escompté :         
+ 	              { message	 : "##--UNCHAMEAUAVECDESBOSSES--##" }
+ 	ou bien {"message":"##--un_chameau_avec_des_bosses--##"} avec ext-txt-formatter .
  ---------------------------------------------------------------------
  e) 
  - aux bons endroits de org.mygeneric.encadreur.autoconfigure.MyEncadreurAutoConfiguration et de 
