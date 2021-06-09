@@ -28,5 +28,5 @@ public class MyExplicitJavaConfigV2 {
 	public Suffixeur monSuffixeurSpringAvecEgal() {
 		return new SuffixeurAvecSperateurEgal("**");
 	}
-    */ 
+   */
 }

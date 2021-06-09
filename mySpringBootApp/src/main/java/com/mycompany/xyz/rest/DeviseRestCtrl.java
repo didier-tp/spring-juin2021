@@ -19,7 +19,7 @@ import com.mycompany.xyz.service.ServiceDevise;
 @RequestMapping(value="/devise-api-rest" , headers="Accept=application/json")
 public class DeviseRestCtrl {
 	
-	@Autowired
+   @Autowired
 	private ServiceDevise serviceDevise;
 	
 	//http://localhost:8181/mySpringBootApp/devise-api-rest/public/devise/EUR

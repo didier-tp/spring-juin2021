@@ -6,6 +6,11 @@ server:
     context-path: /mySpringBootApp
   port: 8181
 
+spring:
+    jpa:
+      repositories:
+        enabled: true
+
 encadreur:
   prefixeur:
     affixe: '>>'

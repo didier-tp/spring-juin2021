@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 //classe pour récupérer des propriétés de configuration
 //au sein de application.properties ou ...
 
-@ConfigurationProperties(prefix = "encadreur")
+@ConfigurationProperties(prefix="encadreur")
 public class EncadreurProperties {
 	private PrefixOuSuffixProperties prefixeur;
 	private PrefixOuSuffixProperties suffixeur;

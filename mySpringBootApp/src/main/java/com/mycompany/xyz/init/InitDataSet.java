@@ -13,7 +13,7 @@ import com.mycompany.xyz.service.ServiceDevise;
 @Profile({"initDataSet"})
 public class InitDataSet {
 	
-	@Autowired
+   @Autowired
 	private ServiceDevise serviceDevise;
 	
 	@PostConstruct
