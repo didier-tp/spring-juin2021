@@ -1,21 +1,26 @@
 package com.mycompany.xyz.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-//@Entity
+@Entity
 @Getter @Setter @ToString @NoArgsConstructor
-//@Table(name="devise")
+@Table(name="devise")
 public class Devise {
-	//@Id
+	@Id
 	private String code; //"EUR" , "USD" , "GBP" , "JPY"
 	
 	
 	private String nom;
 	
-	//@Column(name="echange")
+	@Column(name="echange")
 	private Double change;
 	
 	public Devise(String code, String nom, Double change) {
