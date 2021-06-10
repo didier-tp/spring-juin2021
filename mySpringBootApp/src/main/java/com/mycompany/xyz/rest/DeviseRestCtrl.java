@@ -19,9 +19,16 @@ import com.mycompany.xyz.service.ServiceDevise;
 @RequestMapping(value="/devise-api-rest" , headers="Accept=application/json")
 public class DeviseRestCtrl {
 	
-
+    //@Autowired
 	private ServiceDevise serviceDevise;
 	
+
+	public DeviseRestCtrl(/* @Autowired automatique dès constructeur */ ServiceDevise serviceDevise) {
+		super();
+		this.serviceDevise = serviceDevise;
+	}
+
+
 	//http://localhost:8181/mySpringBootApp/devise-api-rest/public/devise/EUR
 	@GetMapping("/public/devise//{codeDevise}")
 	public Devise getDeviseByCode(@PathVariable("codeDevise") String codeDevise) {

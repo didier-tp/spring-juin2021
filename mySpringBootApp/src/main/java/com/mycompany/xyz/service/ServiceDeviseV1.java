@@ -15,7 +15,7 @@ import com.mycompany.xyz.entity.Devise;
  pour premier Tp d'injection de dépendance
  */
 
-
+@Service
 public class ServiceDeviseV1 implements ServiceDevise{
 	
    private Map<String,Devise> mapDevises = new HashMap<>();

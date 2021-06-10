@@ -8,7 +8,7 @@ server:
 
 encadreur:
   prefixeur:
-    affixe: '>>'
+    affixe: '>>>>>>'
     separateur: '-o-'
   suffixeur:
     affixe: '<<'
