@@ -8,11 +8,11 @@ server:
 
 encadreur:
   prefixeur:
-    affixe: '>>'
-    separateur: '-o-'
+    affixe: '>>>>>>'
+    separateur: '--o--'
   suffixeur:
-    affixe: '<<'
-    separateur: '-o-'
+    affixe: '$$$'
+    separateur: '-------'
 
 #si elements de liste en .yml .yaml
 #liste:
