@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Getter @Setter  @NoArgsConstructor
@@ -28,12 +27,18 @@ public class Client {
 	private String nom;
 	
 	@OneToMany(mappedBy = "client")
-	//@JsonIgnore
+    @JsonIgnore
 	private List<Compte> comptes;
 
 	@Override
 	public String toString() {
 		return "Client [numero=" + numero + ", nom=" + nom + "]";
+	}
+
+	public Client(Long numero, String nom) {
+		super();
+		this.numero = numero;
+		this.nom = nom;
 	}
 
 	
