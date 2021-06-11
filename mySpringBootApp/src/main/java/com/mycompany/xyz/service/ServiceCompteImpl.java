@@ -3,10 +3,11 @@ package com.mycompany.xyz.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mycompany.xyz.entity.Compte;
+import com.mycompany.xyz.exception.MyGenericException;
+import com.mycompany.xyz.exception.NotFoundException;
 import com.mycompany.xyz.repository.RepositoryCompte;
 
 @Service
@@ -22,7 +23,11 @@ public class ServiceCompteImpl implements ServiceCompte {
 
 	@Override
 	public Compte rechercherCompteParNumero(Long numero) {
-		return repositoryCompte.findById(numero).orElse(null);
+		try {
+			return repositoryCompte.findById(numero).get();
+		} catch (Exception e) {
+			throw new NotFoundException("compte inexistant pour numero="+numero);
+		}
 	}
 	
 	@Override
@@ -36,7 +41,7 @@ public class ServiceCompteImpl implements ServiceCompte {
 			cptCred.setSolde(cptCred.getSolde() + montant);
 			//repositoryCompte.save(cptCred); //instruction pas indispensable sur entité persistante
 		} catch (Exception e) {
-		      throw new RuntimeException("echec virement" , e);
+		      throw new MyGenericException("echec virement" , e);
 		}
 	}
 
