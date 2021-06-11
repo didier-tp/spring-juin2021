@@ -18,8 +18,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.mycompany.xyz.MySpringBootApplication;
-import com.mycompany.xyz.dao.DaoDevise;
 import com.mycompany.xyz.entity.Devise;
+import com.mycompany.xyz.repository.RepositoryDevise;
 import com.mycompany.xyz.service.ServiceDevise;
 
 @ExtendWith(SpringExtension.class)
@@ -31,7 +31,7 @@ public class TestServiceDeviseWithDaoMock {
 	private ServiceDevise serviceDevise; //à tester
 	
 	@Autowired
-	private DaoDevise daoDeviseMock; //mock à utiliser
+	private RepositoryDevise daoDeviseMock; //mock à utiliser
 	
 	@BeforeEach
 	public void reInitMock() {
