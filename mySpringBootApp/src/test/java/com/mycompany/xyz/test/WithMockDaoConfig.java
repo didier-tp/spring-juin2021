@@ -7,9 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
-import org.springframework.context.annotation.Scope;
 
-import com.mycompany.xyz.dao.DaoDevise;
+import com.mycompany.xyz.repository.RepositoryDevise;
 
 @Configuration
 public class WithMockDaoConfig {
@@ -19,9 +18,9 @@ public class WithMockDaoConfig {
 	    @Bean()
 	    @Profile("mock-dao")
 	    @Primary //for overriding default spring-data-jpa dao
-	    public DaoDevise daoDeviseMock() {
-	        logger.info("Mocking: {}", DaoDevise.class);
-	        return Mockito.mock(DaoDevise.class);
+	    public RepositoryDevise daoDeviseMock() {
+	        logger.info("Mocking: {}", RepositoryDevise.class);
+	        return Mockito.mock(RepositoryDevise.class);
 	    }
 
 }
