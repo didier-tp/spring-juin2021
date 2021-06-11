@@ -1,0 +1,47 @@
+package com.mycompany.xyz.rest;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mycompany.xyz.entity.Compte;
+import com.mycompany.xyz.entity.Devise;
+import com.mycompany.xyz.service.ServiceCompte;
+
+
+@RestController
+//@CrossOrigin(origins = "*")
+@RequestMapping(value="/bank-api-rest" , headers="Accept=application/json")
+public class CompteRestCtrl {
+	
+   @Autowired
+	private ServiceCompte serviceCompte;
+	
+	//http://localhost:8181/mySpringBootApp/bank-api-rest/public/compte/1
+	@GetMapping("/public/compte/{numCompte}")
+	public Compte getCompteByNum(@PathVariable("numCompte") Long numCompte) {
+		return serviceCompte.rechercherCompteParNumero(numCompte);
+	}
+	
+	
+	//http://localhost:8181/mySpringBootApp/bank-api-rest/public/compte
+	//http://localhost:8181/mySpringBootApp/bank-api-rest/public/compte?numClient=1
+	@GetMapping("/public/compte")
+	public List<Compte> getComptesByCriteria(
+			  @RequestParam(value="numClient",required=false) Long numClient) {
+		List<Compte> comptes = null;
+		if(numClient!=null)
+			comptes = serviceCompte.rechercherComptesDuClient(numClient);
+		else
+			comptes = serviceCompte.rechercherComptes();
+		return comptes;
+	}
+	
+	
+
+}

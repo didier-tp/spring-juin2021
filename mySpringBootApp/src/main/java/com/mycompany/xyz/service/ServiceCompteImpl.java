@@ -37,8 +37,12 @@ public class ServiceCompteImpl implements ServiceCompte {
 
 	@Override
 	public List<Compte> rechercherComptesDuClient(Long numeroClient) {
-		// TODO Auto-generated method stub
-		return null;
+		return repositoryCompte.findByClientNumero(numeroClient);
+	}
+
+	@Override
+	public List<Compte> rechercherComptes() {
+		return repositoryCompte.findAll();
 	}
 
 	
