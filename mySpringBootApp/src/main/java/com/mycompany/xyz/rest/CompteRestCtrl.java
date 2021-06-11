@@ -48,15 +48,15 @@ public class CompteRestCtrl {
 	//avec { "montant" : 50 , "numCptDeb" : 1 , "numCptCred" : 2 }
 	@PostMapping("/public/virement")
 	public Virement postVirement( @RequestBody Virement virement) {
-		try {
+		/*try {*/
 			serviceCompte.transferer(virement.getMontant(), 
 					                                          virement.getNumCptDeb(),
 					                                          virement.getNumCptCred());
 			virement.message="virement bien effectué";
-		} catch (Exception e) {
+	/*	} catch (Exception e) {
 			virement.message="echec virement";
 			e.printStackTrace();
-		}
+		}*/
 		return virement;
 	}
 	
